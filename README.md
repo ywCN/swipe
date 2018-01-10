@@ -1,6 +1,7 @@
 # Tinder
 
 ## Expo
+- app.js file is for both Android and iOS
 
 ## Animation Systems in React Native
 - `LayoutAnimation`
