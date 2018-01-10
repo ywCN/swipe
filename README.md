@@ -12,6 +12,11 @@
     - Far more complicated to set up
     - Allows for more complicated animations
     - Probably need this if want to handle gesture animations
+
+## Trouble Shootings
+- unable to resolve module
+    - check typos in name, export, import
+    - [npm install @expo/vector-icons --save-dev](https://github.com/react-native-training/react-native-elements/issues/620)
     
 ## `Animated` System
 - 3 values are required to describe an entire animation.
