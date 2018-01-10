@@ -16,7 +16,10 @@
 ## Trouble Shootings
 - unable to resolve module
     - check typos in name, export, import
-    - [npm install @expo/vector-icons --save-dev](https://github.com/react-native-training/react-native-elements/issues/620)
+    - [steps](https://github.com/facebook/react-native/issues/4968)
+        1. rm -rf node_modules && npm install
+        2. rm -fr $TMPDIR/react-*
+        3. watchman watch-del-all
     
 ## `Animated` System
 - 3 values are required to describe an entire animation.
