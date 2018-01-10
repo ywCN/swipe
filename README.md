@@ -12,12 +12,12 @@
     - Allows for more complicated animations
     - Probably need this if want to handle gesture animations
     
-## `Animated` Module
+## `Animated` System
 - 3 values are required to describe an entire animation.
     1. What is the current position of the element being animated?
-        - Values: Value, ValueXY
+        - Values(object): Value, ValueXY
     2. How is the animation changing?
-        - Types: Spring, Decay, Timing
+        - Types(module): Spring(object), Decay(object), Timing(object)
     3. Apply the animation's current position to an actual component.
         - Components: View, Text, Image
     
