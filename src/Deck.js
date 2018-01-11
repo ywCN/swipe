@@ -9,11 +9,13 @@ class Deck extends Component {
             // This function is called when a user taps or press down on the screen.
             // If it returns true like () => true, it means we want this instance of
             // the responder to be responsible for the user pressing on the screen.
-            onStartShouldSetPanResponder: () => {},
+            onStartShouldSetPanResponder: () => true,
 
             // This function is called when a user starts to drag their finger
             // around the screen. It will be call many many times.
-            onPanResponderMove: () => {},
+            onPanResponderMove: (event, gesture) => {
+                console.log(gesture);
+            },
 
             // This function is called when a user moves finger from the screen.
             onPanResponderRelease: () => {}
