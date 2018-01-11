@@ -47,6 +47,7 @@ const DATA = [
 ];
 
 export default class App extends React.Component {
+    // will be passed into Deck as props
     renderCard(item) {
         return <Text>{item.text}</Text>;
     }
