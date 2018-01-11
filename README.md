@@ -5,6 +5,15 @@
 - React Native
     - Animated module
 - [React Native Elements](https://github.com/react-native-training/react-native-elements)
+- PanResponder: drag and move
+
+## Trouble Shootings
+- unable to resolve module
+    - check typos in name, export, import
+    - [steps](https://github.com/facebook/react-native/issues/4968)
+        1. rm -rf node_modules && npm install
+        2. rm -fr $TMPDIR/react-*
+        3. watchman watch-del-all
 
 ## Expo
 - app.js file is for both Android and iOS
@@ -18,14 +27,6 @@
     - Far more complicated to set up
     - Allows for more complicated animations
     - Probably need this if want to handle gesture animations
-
-## Trouble Shootings
-- unable to resolve module
-    - check typos in name, export, import
-    - [steps](https://github.com/facebook/react-native/issues/4968)
-        1. rm -rf node_modules && npm install
-        2. rm -fr $TMPDIR/react-*
-        3. watchman watch-del-all
     
 ## `Animated` System
 - Note the `Animated` System runs outside the loop of rendering components.
@@ -40,4 +41,13 @@
     3. Apply the animation's current position to an actual component.
         - Components: View, Text, Image
         - component example: Animated.Components.View
-    
+
+## `PanResponder`(Gesture System)
+- Questions to ask when use gesture system
+    1. What are we touching?
+    2. What component handles the touch?
+    3. How is the gesture changing?
+
+## `Animated` vs. `PanResponder`
+- Animated module handles output like animations
+- PanResponder handles user input like gestures
