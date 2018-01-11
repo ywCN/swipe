@@ -3,9 +3,10 @@
 ## Tech Stacks
 - React
 - React Native
-    - Animated module
+    - Animated module: handles animation output
+    - PanResponder: handles user gestures
 - [React Native Elements](https://github.com/react-native-training/react-native-elements)
-- PanResponder: drag and move
+
 
 ## Trouble Shootings
 - unable to resolve module
@@ -18,7 +19,7 @@
 ## Expo
 - app.js file is for both Android and iOS
 
-## Animation Systems in React Native
+## Animation Modules in React Native
 - `LayoutAnimation`
     - Easy to setup
     - Not much control
@@ -28,7 +29,7 @@
     - Allows for more complicated animations
     - Probably need this if want to handle gesture animations
     
-## `Animated` System
+## `Animated` module
 - Note the `Animated` System runs outside the loop of rendering components.
     - Animation starts after component is rendered, and the component will not re-render during the animation.
 - 3 values are required to describe an entire animation.
@@ -50,4 +51,4 @@
 
 ## `Animated` vs. `PanResponder`
 - Animated module handles output like animations
-- PanResponder handles user input like gestures
+- PanResponder module handles user input like gestures
