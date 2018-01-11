@@ -1,5 +1,11 @@
 # Tinder
 
+## Tech Stacks
+- React
+- React Native
+    - Animated module
+- [React Native Elements](https://github.com/react-native-training/react-native-elements)
+
 ## Expo
 - app.js file is for both Android and iOS
 
