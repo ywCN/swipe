@@ -48,10 +48,10 @@ const DATA = [
 ];
 
 export default class App extends React.Component {
-    // will be passed into Deck as props
+    // this function will be passed into Deck as callback in props
     renderCard(item) {
         return (
-            <Card image={{ uri: item.uri }}>
+            <Card key={item.id} image={{ uri: item.uri }}>
                 <Text style={styles.textStyle}>{item.text}</Text>
                 <Text style={{ marginBottom: 10 }}>further customization</Text>
                 <Button
