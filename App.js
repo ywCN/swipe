@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Ball from './src/Ball';
+import Deck from './src/Deck';
 
 export default class App extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Ball />
+                <Deck />
             </View>
         );
     }
