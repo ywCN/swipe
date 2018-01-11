@@ -5,6 +5,8 @@ class Deck extends Component {
     constructor(props) {
         super(props);
 
+        const position = new Animated.ValueXY();
+
         const panResponder = PanResponder.create({
             // This function is called when a user taps or press down on the screen.
             // If it returns true like () => true, it means we want this instance of
@@ -12,17 +14,20 @@ class Deck extends Component {
             onStartShouldSetPanResponder: () => true,
 
             // This function is called when a user starts to drag their finger
-            // around the screen. It will be call many many times.
+            // around the screen. It is being called ALL THE TIME when dragging.
             onPanResponderMove: (event, gesture) => {
                 // debugger; // pause the cleaning up process of gesture
                 // console.log(gesture);
+                position.setValue({ x: gesture.dx, y: gesture.dy });
             },
 
             // This function is called when a user moves finger from the screen.
             onPanResponderRelease: () => {}
         });
 
-        this.state = { panResponder };
+        // just for injecting data into props
+        // will not use setState() on them
+        this.state = { panResponder, position };
     }
 
     renderCards() {
@@ -32,11 +37,14 @@ class Deck extends Component {
     }
 
     render() {
-        // panHandlers is an object contains a lot of callbacks
         return (
-            <View {...this.state.panResponder.panHandlers}>
+            <Animated.View
+                style={this.state.position.getLayout()}
+                // panHandlers is an object contains a lot of callbacks
+                {...this.state.panResponder.panHandlers}
+            >
                 {this.renderCards()}
-            </View>
+            </Animated.View>
         );
     }
 }
