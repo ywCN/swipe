@@ -51,7 +51,8 @@ export default class App extends React.Component {
     // will be passed into Deck as props
     renderCard(item) {
         return (
-            <Card title={item.text} image={{ uri: item.uri }}>
+            <Card image={{ uri: item.uri }}>
+                <Text style={styles.textStyle}>{item.text}</Text>
                 <Text style={{ marginBottom: 10 }}>further customization</Text>
                 <Button
                     icon={{ name: 'code' }}
@@ -75,5 +76,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff'
+    },
+    textStyle: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: 'black',
+        marginBottom: 10
     }
 });
