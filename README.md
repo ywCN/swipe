@@ -22,6 +22,8 @@
         3. watchman watch-del-all
     
 ## `Animated` System
+- Note the `Animated` System runs outside the loop of rendering components.
+    - Animation starts after component is rendered, and the component will not re-render during the animation.
 - 3 values are required to describe an entire animation.
     1. What is the current position of the element being animated?
         - Values(object): Value, ValueXY
