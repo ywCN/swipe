@@ -14,7 +14,8 @@ class Deck extends Component {
             // This function is called when a user starts to drag their finger
             // around the screen. It will be call many many times.
             onPanResponderMove: (event, gesture) => {
-                console.log(gesture);
+                // debugger; // pause the cleaning up process of gesture
+                // console.log(gesture);
             },
 
             // This function is called when a user moves finger from the screen.

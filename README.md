@@ -15,6 +15,8 @@
         1. rm -rf node_modules && npm install
         2. rm -fr $TMPDIR/react-*
         3. watchman watch-del-all
+- debugger;
+    - pause at this line
 
 ## Expo
 - app.js file is for both Android and iOS
