@@ -31,7 +31,12 @@ class Deck extends Component {
     }
 
     render() {
-        return <View>{this.renderCards()}</View>;
+        // panHandlers is an object contains a lot of callbacks
+        return (
+            <View {...this.state.panResponder.panHandlers}>
+                {this.renderCards()}
+            </View>
+        );
     }
 }
 
