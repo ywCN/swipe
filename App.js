@@ -53,6 +53,11 @@ export default class App extends React.Component {
         return (
             <Card title={item.text} image={{ uri: item.uri }}>
                 <Text style={{ marginBottom: 10 }}>further customization</Text>
+                <Button
+                    icon={{ name: 'code' }}
+                    backgroundColor="#029FA3"
+                    title="Hey!"
+                />
             </Card>
         );
     }
