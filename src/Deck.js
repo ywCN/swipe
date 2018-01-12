@@ -31,21 +31,25 @@ class Deck extends Component {
     }
 
     renderCards() {
-        return this.props.data.map(item => {
+        return this.props.data.map((item, index) => {
+            if (index === 0) {
+                return (
+                    <Animated.View
+                        key={item.id}
+                        style={this.state.position.getLayout()}
+                        // panHandlers is an object contains a lot of callbacks
+                        {...this.state.panResponder.panHandlers}
+                    >
+                        {this.props.renderCard(item)}
+                    </Animated.View>
+                );
+            }
             return this.props.renderCard(item);
         });
     }
 
     render() {
-        return (
-            <Animated.View
-                style={this.state.position.getLayout()}
-                // panHandlers is an object contains a lot of callbacks
-                {...this.state.panResponder.panHandlers}
-            >
-                {this.renderCards()}
-            </Animated.View>
-        );
+        return <View>{this.renderCards()}</View>;
     }
 }
 
