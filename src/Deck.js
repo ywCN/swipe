@@ -30,13 +30,18 @@ class Deck extends Component {
         this.state = { panResponder, position };
     }
 
+    // determine style of card during drag
+    getCardStyle() {
+        return this.state.position.getLayout();
+    }
+
     renderCards() {
         return this.props.data.map((item, index) => {
             if (index === 0) {
                 return (
                     <Animated.View
                         key={item.id}
-                        style={this.state.position.getLayout()}
+                        style={this.getCardStyle()}
                         // panHandlers is an object contains a lot of callbacks
                         {...this.state.panResponder.panHandlers}
                     >
