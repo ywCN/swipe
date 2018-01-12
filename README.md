@@ -18,6 +18,9 @@
         3. watchman watch-del-all
 - debugger;
     - pause at this line
+- this.props.xxxx is not a function
+    - check spelling
+    - check if the callback is passed in component's props
 
 ## Expo
 - app.js file is for both Android and iOS
