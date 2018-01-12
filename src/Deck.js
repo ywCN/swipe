@@ -39,7 +39,8 @@ class Deck extends Component {
         // set up interpolation object
         const rotate = position.x.interpolate({
             // like a linear relationship of values in a range
-            inputRange: [-SCREEN_WIDTH, 0, SCREEN_WIDTH],
+            // * 1.5 make rotating less sensitive
+            inputRange: [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
             outputRange: ['-120deg', '0deg', '120deg']
         });
 
