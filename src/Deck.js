@@ -24,12 +24,20 @@ class Deck extends Component {
             },
 
             // This function is called when a user moves finger from the screen.
-            onPanResponderRelease: () => {}
+            onPanResponderRelease: () => {
+                this.resetPosition();
+            }
         });
 
         // just for injecting data into props
         // will not use setState() on them
         this.state = { panResponder, position };
+    }
+
+    resetPosition() {
+        Animated.spring(this.state.position, {
+            toValue: { x: 0, y: 0 }
+        }).start();
     }
 
     // determine style of card during drag
@@ -39,7 +47,7 @@ class Deck extends Component {
         // set up interpolation object
         const rotate = position.x.interpolate({
             // like a linear relationship of values in a range
-            // * 1.5 make rotating less sensitive
+            // * 1.5 makes rotating less sensitive
             inputRange: [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
             outputRange: ['-120deg', '0deg', '120deg']
         });
