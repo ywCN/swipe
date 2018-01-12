@@ -56,9 +56,18 @@ export default class App extends React.Component {
                 <Text style={{ marginBottom: 10 }}>further customization</Text>
                 <Button
                     icon={{ name: 'code' }}
-                    backgroundColor="#029FA3"
+                    backgroundColor="#03A9F4"
                     title="Hey!"
                 />
+            </Card>
+        );
+    }
+
+    renderNoMoreCards() {
+        return (
+            <Card title="All Done!">
+                <Text style={{ marginBottom: 10 }}>There is no more card!</Text>
+                <Button backgroundColor="#03A9F4" title="Get more card!" />
             </Card>
         );
     }
