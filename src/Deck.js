@@ -15,15 +15,15 @@ class Deck extends Component {
             // the responder to be responsible for the user pressing on the screen.
             onStartShouldSetPanResponder: () => true,
 
-            // This function is called when a user starts to drag their finger
-            // around the screen. It is being called ALL THE TIME when dragging.
+            // This function is called when a user drags their finger around
+            // the screen. It is being called ALL THE TIME during dragging.
             onPanResponderMove: (event, gesture) => {
                 // debugger; // pause the cleaning up process of gesture
                 // console.log(gesture);
                 position.setValue({ x: gesture.dx, y: gesture.dy });
             },
 
-            // This function is called when a user moves finger from the screen.
+            // This function is called when a user releases finger from the screen.
             onPanResponderRelease: () => {
                 this.resetPosition();
             }
