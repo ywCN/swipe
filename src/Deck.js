@@ -32,9 +32,17 @@ class Deck extends Component {
 
     // determine style of card during drag
     getCardStyle() {
+        const { position } = this.state;
+
+        // set up interpolation
+        const rotate = position.x.interpolate({
+            inputRange: [-500, 0, 500],
+            outputRange: ['-120deg', '0deg', '120deg']
+        });
+
         return {
-            ...this.state.position.getLayout(),
-            transform: [{ rotate: '45deg' }]
+            ...position.getLayout(),
+            transform: [{ rotate }] // { rotate: rotate }
         };
     }
 
