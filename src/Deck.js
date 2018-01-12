@@ -32,7 +32,10 @@ class Deck extends Component {
 
     // determine style of card during drag
     getCardStyle() {
-        return this.state.position.getLayout();
+        return {
+            ...this.state.position.getLayout(),
+            transform: [{ rotate: '45deg' }]
+        };
     }
 
     renderCards() {
