@@ -45,7 +45,7 @@ class Deck extends Component {
         });
 
         // just for injecting data into props
-        // will not use setState() on them
+        // do not use setState() on position, use this.state.position.setValue()
         // index tracks current card
         this.state = { panResponder, position, index: 0 };
     }
@@ -64,7 +64,9 @@ class Deck extends Component {
         const item = data[this.state.index]; // current card
 
         direction === 'right' ? onSwipeRight(item) : onSwipeLeft(item);
+        // reset card position
         this.state.position.setValue({ x: 0, y: 0 });
+        // update current card index
         this.setState({ index: this.state.index + 1 }); // do not this.state.index++;
     }
 
