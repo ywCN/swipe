@@ -107,7 +107,8 @@ class Deck extends Component {
                 return (
                     <Animated.View
                         key={item.id}
-                        style={this.getCardStyle()}
+                        // passing mutiple styles needs to use array
+                        style={[this.getCardStyle(), styles.cardStyle]}
                         // panHandlers is an object contains a lot of callbacks
                         {...this.state.panResponder.panHandlers}
                     >
@@ -115,7 +116,11 @@ class Deck extends Component {
                     </Animated.View>
                 );
             }
-            return this.props.renderCard(item);
+            return (
+                <View key={item.id} style={styles.cardStyle}>
+                    {this.props.renderCard(item)}
+                </View>
+            );
         });
     }
 
@@ -123,5 +128,11 @@ class Deck extends Component {
         return <View>{this.renderCards()}</View>;
     }
 }
+
+const styles = {
+    cardStyle: {
+        position: 'absolute' // 'absolute' will cause card to stack up
+    }
+};
 
 export default Deck;
