@@ -5,6 +5,7 @@
 - React Native
     - Animated module: handles animation output
     - PanResponder: handles user gestures
+    - Dimensions: retrive width and height
 - [React Native Elements](https://github.com/react-native-training/react-native-elements)
 
 
