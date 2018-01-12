@@ -6,6 +6,8 @@ const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
 const SWIPE_OUT_DURATION = 250;
 
 class Deck extends Component {
+    // for avoiding errors during testing
+    // for reusable component
     static defaultProps = {
         onSwipeRight: () => {},
         onSwipeLeft: () => {}
@@ -62,6 +64,8 @@ class Deck extends Component {
         const item = data[this.state.index]; // current card
 
         direction === 'right' ? onSwipeRight(item) : onSwipeLeft(item);
+        this.state.position.setValue({ x: 0, y: 0 });
+        this.setState({ index: this.state.index + 1 }); // do not this.state.index++;
     }
 
     resetPosition() {
