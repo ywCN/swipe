@@ -131,7 +131,10 @@ class Deck extends Component {
 
 const styles = {
     cardStyle: {
-        position: 'absolute' // 'absolute' will cause card to stack up
+        // 'absolute' will cause card to stack up
+        // it has a side effect which will cause elements shrink to minimal dispaly size
+        position: 'absolute',
+        width: SCREEN_WIDTH // same as left: 0, right: 0
     }
 };
 
