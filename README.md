@@ -6,6 +6,8 @@
     - Animated module: handles animation output
     - PanResponder: handles user gestures
     - Dimensions: retrive width and height
+    - LayoutAnimation: for testing android layout animation
+    - UIManager: for layout animation like a stack of cards bouncing up
 - [React Native Elements](https://github.com/react-native-training/react-native-elements)
 
 
