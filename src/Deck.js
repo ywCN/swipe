@@ -57,6 +57,13 @@ class Deck extends Component {
         this.state = { panResponder, position, index: 0 };
     }
 
+    componentWillReceiveProps(nextProps) {
+        // if new set of data, reset index of current card
+        if (nextProps.data !== this.props.data) {
+            this.setState({ index: 0 });
+        }
+    }
+
     componentWillUpdate() {
         UIManager.setLayoutAnimationEnabledExperimental &&
             UIManager.setLayoutAnimationEnabledExperimental(true);
