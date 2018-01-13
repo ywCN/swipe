@@ -64,10 +64,11 @@ class Deck extends Component {
         }
     }
 
+    // create animation after swiping card
     componentWillUpdate() {
         UIManager.setLayoutAnimationEnabledExperimental &&
-            UIManager.setLayoutAnimationEnabledExperimental(true);
-        LayoutAnimation.spring();
+            UIManager.setLayoutAnimationEnabledExperimental(true); // for android
+        LayoutAnimation.spring(); // for both iOS and Android
     }
 
     forceSwipe(direction) {
